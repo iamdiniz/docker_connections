@@ -6,7 +6,7 @@ app.config["DEBUG"] = True
 
 # Configurações do MySQL
 DB_CONFIG = {
-    "host": "mysql_api_container",  # Nome do contêiner MySQL
+    "host": "db",  # Nome do contêiner MySQL
     "user": "root",
     "password": "",
     "database": "flaskdocker"

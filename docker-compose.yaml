@@ -1,0 +1,23 @@
+services:
+  db:
+    image: mysqlcompose # image personalizada criada no meu docker local...
+    restart: always
+    env_file:
+      - ./config/db.env
+    ports:
+      - "3307:3306"
+    networks:
+      - dockercompose
+
+  backend:
+    depends_on: # depende do container de cima para ser iniciado...
+      - db
+    image: flaskcompose # image personalizada criada no meu docker local...
+    ports:
+      - "5000:5000"
+    restart: always
+    networks:
+      - dockercompose
+
+networks: # o docker cria como padrão uma rede bridge
+  dockercompose:
