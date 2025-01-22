@@ -16,6 +16,8 @@ services:
     ports:
       - "5000:5000"
     restart: always
+    volumes: # quero persistir os dados em tempo real do meu app.py (pra ver as alterações ao vivo)
+      - "/home/diniz/Workspaces/docker_course/networks/conexao_entre_containers/flask:/app"
     networks:
       - dockercompose
 

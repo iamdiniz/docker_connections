@@ -51,7 +51,7 @@ def add_user():
         cursor.close()
         connection.close()
         
-        return jsonify({"message": "User added successfully"}), 201
+        return jsonify({"message": f"User added successfully. Hello {name}!"}), 201
     except mysql.connector.Error as e:
         return jsonify({"error": "Failed to add user", "details": str(e)}), 500
 
